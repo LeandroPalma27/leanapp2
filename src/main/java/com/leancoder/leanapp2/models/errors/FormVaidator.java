@@ -1,7 +1,6 @@
 package com.leancoder.leanapp2.models.errors;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Map;
 
 import org.springframework.web.context.annotation.RequestScope;
@@ -10,13 +9,13 @@ import org.springframework.web.context.annotation.RequestScope;
 public class FormVaidator implements Cloneable, Serializable {
 
     private static final long serialVersionUID = 3106078418055108414L;
-    
+
     private String message;
     private Map<String, String> fieldsWithErrors;
-    private Date date;
+    private String date;
     private int status;
     
-    public FormVaidator(String message, Map<String, String> fieldsWithErrors, Date date, int status) {
+    public FormVaidator(String message, Map<String, String> fieldsWithErrors, String date, int status) {
         this.message = message;
         this.fieldsWithErrors = fieldsWithErrors;
         this.date = date;
@@ -39,11 +38,11 @@ public class FormVaidator implements Cloneable, Serializable {
         this.fieldsWithErrors.put(field, messageError);
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
